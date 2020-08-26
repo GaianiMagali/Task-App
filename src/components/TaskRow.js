@@ -1,9 +1,18 @@
 import React from 'react'
 
-export const TaskRow = (props) => {
+export const TaskRow = ({ name, done, toggleTask }) => {
+
     return (
-        <div>
-            
-        </div>
+        <tr key={name}>
+            <td>
+                {name}
+            </td>
+
+            <td>
+                <input
+                    type="checkbox" checked={done} onChange={() => toggleTask(name) }
+                />
+            </td>
+        </tr>
     )
 }
